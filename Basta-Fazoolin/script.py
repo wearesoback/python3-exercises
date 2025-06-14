@@ -12,7 +12,14 @@ class Menu:
 		return '%s menu available from %s to %s' %(self.name, self.start_time, self.end_time) # brunch menu available from 11am to 4pm
 
 	def calculate_bill(self, purchased_items):
+
+		# calculates total bill from specific order
+
 		total = 0
+		for item in purchased_items:
+			if item in self.items:
+				total += self.items[item]
+
 		return total
 
 
